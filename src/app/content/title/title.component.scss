@@ -1,0 +1,19 @@
+.title-container {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+
+  .tip-container {
+    margin-left: 24px;
+    padding: 10px 20px;
+    background-color: #edf2ff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+
+    .tip-text {
+      margin-left: 12px;
+      font-size: 14px;
+    }
+  }
+}

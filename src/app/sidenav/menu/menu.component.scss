@@ -9,6 +9,8 @@
   .menu-item {
     display: flex;
     align-items: center;
+    color: #000000;
+    text-decoration: none;
 
     .menu-title {
       margin-left: 16px;
@@ -22,14 +24,17 @@
 }
 
 .divider {
-  color: lightgray;
+  color: #e9ecef;
 }
 
-.submenu-container {
+.submenu-a {
   height: 42px;
   padding-left: 24px;
   display: flex;
   align-items: center;
+  cursor: pointer;
+  color: #495057;
+  text-decoration: none;
 
   .submenu-title {
     font-size: 14px;
@@ -44,6 +49,11 @@
   }
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .selected {
   background-color: #f3f0ff;
+  cursor: default;
 }

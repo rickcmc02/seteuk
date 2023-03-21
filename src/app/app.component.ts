@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'seteuk';
+  pageId = 41;
+
+  onChangePage(id: number) {
+    this.pageId = id;
+  }
 }

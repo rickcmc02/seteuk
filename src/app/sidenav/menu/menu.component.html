@@ -1,4 +1,4 @@
-<div class="menu-container" (click)="onToggleMenu()">
+<div class="menu-container" [ngClass]="{'cursor-pointer': subs}" (click)="subs && onToggleMenu()">
     <div class="menu-item">
         <span class="material-symbols-outlined">
             {{ icon }}
@@ -9,10 +9,12 @@
 </div>
 <mat-divider class="divider" />
 <div *ngIf="isOpen && subs">
-    <div *ngFor="let sub of subs" class="submenu-container">
-        <span class="submenu-title">
-            {{sub.label}}
-        </span>
-        <span *ngIf="sub.icon" class="sub-icon" style="background-image: url({{sub.icon}});"></span>
-    </div>
+    <li *ngFor="let sub of subs" routerLinkActive="selected">
+        <a class="submenu-a" routerLink="/{{sub.id}}">
+            <span class="submenu-title">
+                {{sub.label}}
+            </span>
+            <span *ngIf="sub.icon" class="sub-icon" style="background-image: url({{sub.icon}});"></span>
+        </a>
+    </li>
 </div>

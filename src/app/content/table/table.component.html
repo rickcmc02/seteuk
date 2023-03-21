@@ -1,0 +1,47 @@
+<section class="table-container">
+  <div class="filter-container"></div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef>작성일자</th>
+      <td mat-cell *matCellDef="let element">{{ element.date }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="transaction">
+      <th mat-header-cell *matHeaderCellDef>거래구분</th>
+      <td mat-cell *matCellDef="let element">{{ element.transaction }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="taxType">
+      <th mat-header-cell *matHeaderCellDef>과세구분</th>
+      <td mat-cell *matCellDef="let element">{{ element.taxType }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>상호</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="businessNum">
+      <th mat-header-cell *matHeaderCellDef>사업자 번호</th>
+      <td mat-cell *matCellDef="let element">{{ element.businessNum }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="supply">
+      <th mat-header-cell *matHeaderCellDef>공급가액</th>
+      <td mat-cell *matCellDef="let element">{{ element.supply }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="vat">
+      <th mat-header-cell *matHeaderCellDef>부가세</th>
+      <td mat-cell *matCellDef="let element">{{ element.vat }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="sum">
+      <th mat-header-cell *matHeaderCellDef>합계액</th>
+      <td mat-cell *matCellDef="let element">{{ element.sum }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</section>

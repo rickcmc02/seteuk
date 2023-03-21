@@ -1,10 +1,4 @@
-<!-- <div class="body-container">
-  <section class="side"></section>
-  <app-sidenav></app-sidenav>
-  <h3>I'm in the AppComponent</h3>
-</div> -->
-
 <mat-drawer-container class="body-container">
   <mat-drawer mode="side" opened><app-sidenav /></mat-drawer>
-  <mat-drawer-content>Main content</mat-drawer-content>
+  <mat-drawer-content><app-header /><app-content [pageId]="pageId" /></mat-drawer-content>
 </mat-drawer-container>

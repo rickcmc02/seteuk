@@ -1,10 +1,10 @@
 <section class="the-sidenav">
   <div class="logo-container">
-    <img src="https://www.seteuk.com/common/imgs/logo.svg?v=1.0" />
+    <img class="logo" src="https://www.seteuk.com/common/imgs/logo.svg?v=1.0" />
   </div>
   <mat-list>
       <mat-list-item *ngFor="let menu of SIDENAV_MENU">
-          <app-sidenav-menu [name]="menu.label" [icon]="menu.icon" [subs]="menu.subs" />
+          <app-sidenav-menu [id]="menu.id" [name]="menu.label" [icon]="menu.icon" [subs]="menu.subs" />
       </mat-list-item>
   </mat-list>
 </section>
