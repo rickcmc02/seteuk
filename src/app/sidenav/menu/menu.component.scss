@@ -1,0 +1,49 @@
+.menu-container {
+  height: 42px;
+  padding-left: 12px;
+  padding-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .menu-item {
+    display: flex;
+    align-items: center;
+
+    .menu-title {
+      margin-left: 16px;
+      font-size: 14px;
+    }
+  }
+
+  .toggle-arrow {
+    align-self: right;
+  }
+}
+
+.divider {
+  color: lightgray;
+}
+
+.submenu-container {
+  height: 42px;
+  padding-left: 24px;
+  display: flex;
+  align-items: center;
+
+  .submenu-title {
+    font-size: 14px;
+  }
+
+  .sub-icon {
+    width: 20px;
+    aspect-ratio: 1;
+    margin-left: 4px;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.selected {
+  background-color: #f3f0ff;
+}

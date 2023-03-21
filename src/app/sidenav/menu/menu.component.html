@@ -1,0 +1,18 @@
+<div class="menu-container" (click)="onToggleMenu()">
+    <div class="menu-item">
+        <span class="material-symbols-outlined">
+            {{ icon }}
+        </span>
+        <span class="menu-title">{{ name }}</span>
+    </div>
+    <div *ngIf="subs" class="material-symbols-outlined">{{ isOpen ?  'expand_less' : 'expand_more' }}</div>
+</div>
+<mat-divider class="divider" />
+<div *ngIf="isOpen && subs">
+    <div *ngFor="let sub of subs" class="submenu-container">
+        <span class="submenu-title">
+            {{sub.label}}
+        </span>
+        <span *ngIf="sub.icon" class="sub-icon" style="background-image: url({{sub.icon}});"></span>
+    </div>
+</div>
