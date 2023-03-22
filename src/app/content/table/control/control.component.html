@@ -1,0 +1,43 @@
+<div class="control-container">
+  <mat-form-field appearance="outline">
+    <mat-label>거래구분</mat-label>
+    <mat-select class="select-custom">
+      <mat-option value="all">전체</mat-option>
+      <mat-option value="sale">매출</mat-option>
+      <mat-option value="purchase">매입</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>과세구분</mat-label>
+    <mat-select>
+      <mat-option value="all">전체</mat-option>
+      <mat-option value="non">면세</mat-option>
+      <mat-option value="zero">영세</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>분기검색</mat-label>
+    <mat-select>
+      <mat-option value="2201">2022년 1분기</mat-option>
+      <mat-option value="2202">2022년 2분기</mat-option>
+      <mat-option value="2203">2022년 3분기</mat-option>
+      <mat-option value="2204">2022년 4분기</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Enter a date range</mat-label>
+    <mat-date-range-input [rangePicker]="picker">
+      <input matStartDate placeholder="Start date" />
+      <input matEndDate placeholder="End date" />
+    </mat-date-range-input>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Clearable input</mat-label>
+    <input matInput type="text" />
+    <span matSuffix class="material-symbols-outlined"> search </span>
+  </mat-form-field>
+</div>

@@ -1,5 +1,5 @@
 .menu-container {
-  height: 42px;
+  height: 40px;
   padding-left: 12px;
   padding-right: 8px;
   display: flex;
@@ -9,7 +9,7 @@
   .menu-item {
     display: flex;
     align-items: center;
-    color: #000000;
+    color: #646464;
     text-decoration: none;
 
     .menu-title {
@@ -28,12 +28,12 @@
 }
 
 .submenu-a {
-  height: 42px;
+  height: 40px;
   padding-left: 24px;
   display: flex;
   align-items: center;
   cursor: pointer;
-  color: #495057;
+  color: #646464;
   text-decoration: none;
 
   .submenu-title {
@@ -56,4 +56,7 @@
 .selected {
   background-color: #f3f0ff;
   cursor: default;
+  .submenu-title {
+    color: #242424;
+  }
 }
