@@ -2,56 +2,108 @@
   <div class="control-container">
     <app-table-control></app-table-control>
   </div>
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="outlined-table">
     <ng-container matColumnDef="date">
-      <th mat-header-cell *matHeaderCellDef>작성일자</th>
+      <th mat-header-cell *matHeaderCellDef style="width: 8%">작성일자</th>
       <td mat-cell *matCellDef="let element">{{ element.date }}</td>
     </ng-container>
 
     <ng-container matColumnDef="transaction">
-      <th mat-header-cell *matHeaderCellDef>거래구분</th>
-      <td mat-cell *matCellDef="let element">{{ element.transaction }}</td>
+      <th mat-header-cell *matHeaderCellDef style="width: 6%">거래구분</th>
+      <td mat-cell *matCellDef="let element">
+        <mat-chip
+          class="base-chip"
+          [class.contained-chip]="element.transaction === '매입'"
+          [class.outlined-chip]="element.transaction !== '매입'"
+          ><span>{{ element.transaction }}</span></mat-chip
+        >
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="taxType">
-      <th mat-header-cell *matHeaderCellDef>과세구분</th>
-      <td mat-cell *matCellDef="let element">{{ element.taxType }}</td>
+      <th mat-header-cell *matHeaderCellDef style="width: 6%">과세구분</th>
+      <td mat-cell *matCellDef="let element">
+        <mat-chip
+          class="base-chip"
+          [class.contained-chip]="element.taxType !== '과세'"
+          [class.outlined-chip]="element.taxType === '과세'"
+          ><span>{{ element.taxType }}</span></mat-chip
+        >
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef>상호</th>
+      <th mat-header-cell *matHeaderCellDef style="width: 42%">상호</th>
       <td mat-cell *matCellDef="let element">{{ element.name }}</td>
     </ng-container>
 
     <ng-container matColumnDef="businessNum">
-      <th mat-header-cell *matHeaderCellDef>사업자 번호</th>
+      <th mat-header-cell *matHeaderCellDef style="width: 8%">사업자 번호</th>
       <td mat-cell *matCellDef="let element">{{ element.businessNum }}</td>
     </ng-container>
 
     <ng-container matColumnDef="supply">
-      <th mat-header-cell *matHeaderCellDef>공급가액</th>
-      <td mat-cell *matCellDef="let element">{{ element.supply }}</td>
+      <th mat-header-cell *matHeaderCellDef style="width: 10%">공급가액</th>
+      <td mat-cell *matCellDef="let element" class="align-right">
+        {{ amountConvertor(element.supply) }}
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="vat">
-      <th mat-header-cell *matHeaderCellDef>부가세</th>
-      <td mat-cell *matCellDef="let element">{{ element.vat }}</td>
+      <th mat-header-cell *matHeaderCellDef style="width: 10%">부가세</th>
+      <td mat-cell *matCellDef="let element" class="align-right">
+        {{ amountConvertor(element.vat) }}
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="sum">
-      <th mat-header-cell *matHeaderCellDef>합계액</th>
-      <td mat-cell *matCellDef="let element">{{ element.sum }}</td>
+      <th mat-header-cell *matHeaderCellDef style="width: 10%">합계액</th>
+      <td mat-cell *matCellDef="let element" class="align-right">
+        {{ amountConvertor(element.supply + element.vat) }}
+      </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
 
-  <mat-paginator
-    [length]="100"
+  <!-- <mat-paginator
+    [length]="dataSource.length"
     [pageSize]="10"
     [pageSizeOptions]="[5, 10, 25, 100]"
     aria-label="Select page"
   >
-  </mat-paginator>
+  </mat-paginator> -->
+
+  <div class="custom-paginator">
+    <button
+      [class.disabled]="currentPage === 0"
+      (click)="currentPage > 0 && onMovePrev()"
+    >
+      <span class="material-symbols-outlined np-btn"> chevron_left </span>
+    </button>
+    <button
+      *ngFor="let pageNum of NOP_LIST; index as i"
+      [class.selected]="i === currentPage"
+      (click)="i !== currentPage && onChangePage(i)"
+    >
+      {{ i + 1 }}
+    </button>
+    <button
+      [class.disabled]="currentPage === NOP_LIST.length - 1"
+      (click)="currentPage < NOP_LIST.length - 1 && onMoveNext()"
+    >
+      <span class="material-symbols-outlined np-btn"> chevron_right </span>
+    </button>
+
+    <select
+      class="row-num-select"
+      [value]="rowsPerPage"
+      (ngModelChange)="onChangeRowsPerPage(0)"
+    >
+      <option (value)="(10)">10</option>
+      <option (value)="(20)">20</option>
+      <option (value)="(50)">50</option>
+    </select>
+  </div>
 </section>

@@ -1,9 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild, ViewEncapsulation } from '@angular/core';
+import { MatAccordion } from '@angular/material/expansion';
 
 @Component({
   selector: 'app-sidenav-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class MenuComponent {
   @Input() id = 0;
@@ -22,7 +24,5 @@ export class MenuComponent {
     history.pushState({}, '', strId);
   }
 
-  onToggleMenu() {
-    this.isOpen = !this.isOpen;
-  }
+  @ViewChild(MatAccordion) accordion!: MatAccordion;
 }

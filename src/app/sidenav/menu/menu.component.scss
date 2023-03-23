@@ -1,62 +1,79 @@
-.menu-container {
-  height: 40px;
-  padding-left: 12px;
-  padding-right: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
+#sidenav-custom-style-container {
+  .menu-container {
+    height: 40px;
+    padding-left: 12px;
+    padding-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   .menu-item {
     display: flex;
     align-items: center;
     color: #646464;
     text-decoration: none;
 
+    .material-symbols-outlined {
+      color: #000000;
+    }
     .menu-title {
-      margin-left: 16px;
+      margin-left: 12px;
       font-size: 14px;
     }
   }
 
-  .toggle-arrow {
-    align-self: right;
-  }
-}
+  .submenu-a {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #646464;
+    text-decoration: none;
 
-.divider {
-  color: #e9ecef;
-}
+    .submenu-title {
+      font-size: 14px;
+    }
 
-.submenu-a {
-  height: 40px;
-  padding-left: 24px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  color: #646464;
-  text-decoration: none;
-
-  .submenu-title {
-    font-size: 14px;
+    .sub-icon {
+      width: 20px;
+      aspect-ratio: 1;
+      margin-left: 4px;
+      background-size: cover;
+      background-position: center;
+    }
   }
 
-  .sub-icon {
-    width: 20px;
-    aspect-ratio: 1;
-    margin-left: 4px;
-    background-size: cover;
-    background-position: center;
+  .mat-expansion-panel-header {
+    height: 40px;
+    padding-left: 0;
+    padding-right: 16px;
   }
-}
 
-.cursor-pointer {
-  cursor: pointer;
-}
+  .mat-expansion-panel-body {
+    padding: 0;
 
-.selected {
-  background-color: #f3f0ff;
-  cursor: default;
-  .submenu-title {
-    color: #242424;
+    .mdc-list {
+      padding: 0;
+
+      .mdc-list-item {
+        height: 40px;
+        padding: 0 24px;
+      }
+    }
+  }
+
+  .divider {
+    color: #ededed;
+  }
+
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+  .selected {
+    background-color: #f3f0ff;
+    cursor: default;
+    .submenu-title {
+      color: #242424;
+    }
   }
 }

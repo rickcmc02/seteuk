@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
@@ -13,6 +14,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatChipsModule } from '@angular/material/chips';
 
 import { AppComponent } from './app.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
@@ -44,6 +46,7 @@ import { ControlComponent } from './content/table/control/control.component';
     BrowserAnimationsModule,
     MatSidenavModule,
     MatListModule,
+    MatExpansionModule,
     MatDividerModule,
     MatFormFieldModule,
     MatSelectModule,
@@ -52,6 +55,7 @@ import { ControlComponent } from './content/table/control/control.component';
     MatNativeDateModule,
     MatInputModule,
     MatPaginatorModule,
+    MatChipsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

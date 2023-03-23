@@ -1,3 +1,17 @@
 .control-container {
   display: flex;
+  justify-content: flex-end;
+  .margin-left20 {
+    margin-left: 20px;
+  }
+
+  .select-division {
+    width: 140px;
+  }
+  .select-quarter {
+    width: 160px;
+  }
+  .input-searchbox {
+    width: 240px;
+  }
 }

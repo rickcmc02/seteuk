@@ -1,20 +1,39 @@
-<div class="menu-container" [ngClass]="{'cursor-pointer': subs}" (click)="subs && onToggleMenu()">
-    <div class="menu-item">
-        <span class="material-symbols-outlined">
-            {{ icon }}
-        </span>
-        <span class="menu-title">{{ name }}</span>
+<div  id="sidenav-custom-style-container">
+    <div *ngIf="!subs">
+        <div class="menu-container"(click)="subs && accordion.openAll()">
+            <div class="menu-item">
+                <span class="material-symbols-outlined">
+                    {{ icon }}
+                </span>
+                <span class="menu-title">{{ name }}</span>
+            </div>
+        </div>
+        <mat-divider class="divider" />
     </div>
-    <div *ngIf="subs" class="material-symbols-outlined">{{ isOpen ?  'expand_less' : 'expand_more' }}</div>
-</div>
-<mat-divider class="divider" />
-<div *ngIf="isOpen && subs">
-    <li *ngFor="let sub of subs" routerLinkActive="selected">
-        <a class="submenu-a" routerLink="/{{sub.id}}">
-            <span class="submenu-title">
-                {{sub.label}}
-            </span>
-            <span *ngIf="sub.icon" class="sub-icon" style="background-image: url({{sub.icon}});"></span>
-        </a>
-    </li>
+    <mat-accordion *ngIf="subs">
+        <mat-expansion-panel expanded>
+            <mat-expansion-panel-header>
+                <div class="menu-container">
+                    <div class="menu-item">
+                        <span class="material-symbols-outlined">
+                            {{ icon }}
+                        </span>
+                        <span class="menu-title">{{ name }}</span>
+                    </div>
+                </div>
+            </mat-expansion-panel-header>
+            <mat-divider class="divider" />
+            <mat-list *ngIf="isOpen && subs">
+                <mat-list-item *ngFor="let sub of subs" routerLinkActive="selected">
+                    <a class="submenu-a" routerLink="/{{sub.id}}">
+                        <span class="submenu-title">
+                            {{sub.label}}
+                        </span>
+                        <span *ngIf="sub.icon" class="sub-icon" style="background-image: url({{sub.icon}});"></span>
+                    </a>
+                </mat-list-item>
+            </mat-list>
+        </mat-expansion-panel>
+    </mat-accordion>
+
 </div>

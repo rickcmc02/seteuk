@@ -1,0 +1,71 @@
+.outlined-table {
+  border: 1px solid rgba(0, 0, 0, 0.42);
+  border-radius: 4px;
+  background-color: transparent;
+
+  .mdc-data-table__header-cell {
+    color: #757575;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .align-right {
+    text-align: right;
+  }
+
+  .base-chip {
+    height: 24px;
+  }
+
+  .outlined-chip {
+    border: 1px solid rgba(0, 0, 0, 0.87);
+    background-color: transparent;
+    span {
+      color: rgba(0, 0, 0, 0.87);
+    }
+  }
+
+  .contained-chip {
+    background-color: #3f51b5;
+    span {
+      color: #ffffff;
+    }
+  }
+}
+
+.custom-paginator {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  button {
+    background-color: transparent;
+    border-radius: 4px;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 16px;
+    border: none;
+    width: 34px;
+    height: 34px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  .selected {
+    background-color: #3f51b5;
+    color: #ffffff;
+    cursor: default;
+  }
+  .disabled {
+    color: rgba(0, 0, 0, 0.38);
+    cursor: default;
+  }
+  .row-num-select {
+    width: 60px;
+    padding: 10px 0;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #000000;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 16px;
+  }
+}
