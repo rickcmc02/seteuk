@@ -99,7 +99,7 @@
     <select
       class="row-num-select"
       [value]="rowsPerPage"
-      (ngModelChange)="onChangeRowsPerPage(0)"
+      (ngModelChange)="onChangeRowsPerPage($event.target)"
     >
       <option (value)="(10)">10</option>
       <option (value)="(20)">20</option>

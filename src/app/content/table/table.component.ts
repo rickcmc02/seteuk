@@ -254,7 +254,7 @@ export class TableComponent {
   onMoveNext() {
     this.onChangePage(this.currentPage + 1);
   }
-  onChangeRowsPerPage(rows: number) {
+  onChangeRowsPerPage(rows: any) {
     console.log(rows);
     this.rowsPerPage = rows;
     this.onChangePage(this.currentPage);
