@@ -67,14 +67,6 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
 
-  <!-- <mat-paginator
-    [length]="dataSource.length"
-    [pageSize]="10"
-    [pageSizeOptions]="[5, 10, 25, 100]"
-    aria-label="Select page"
-  >
-  </mat-paginator> -->
-
   <div class="custom-paginator">
     <button
       [class.disabled]="currentPage === 0"
@@ -84,6 +76,7 @@
     </button>
     <button
       *ngFor="let pageNum of NOP_LIST; index as i"
+      class="page-num-btn"
       [class.selected]="i === currentPage"
       (click)="i !== currentPage && onChangePage(i)"
     >
@@ -95,16 +88,6 @@
     >
       <span class="material-symbols-outlined np-btn"> chevron_right </span>
     </button>
-
-    <!-- <select
-      class="row-num-select"
-      [value]="rowsPerPage"
-      (ngModelChange)="onChangeRowsPerPage($event.target)"
-    >
-      <option (value)="(10)">10</option>
-      <option (value)="(20)">20</option>
-      <option (value)="(50)">50</option>
-    </select> -->
 
     <mat-form-field appearance="fill" class="row-num-field">
       <mat-select

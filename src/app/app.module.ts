@@ -23,7 +23,7 @@ import { HeaderComponent } from './header/header.component';
 import { ContentComponent } from './content/content.component';
 import { TitleComponent } from './content/title/title.component';
 import { EmptyComponent } from './content/empty/empty.component';
-import { TaxBillComponent } from './content/tax-bill/tax-bill.component';
+import { TaxInvoiceComponent } from './content/tax-invoice/tax-invoice.component';
 import { TableComponent } from './content/table/table.component';
 import { ControlComponent } from './content/table/control/control.component';
 
@@ -36,7 +36,7 @@ import { ControlComponent } from './content/table/control/control.component';
     ContentComponent,
     TitleComponent,
     EmptyComponent,
-    TaxBillComponent,
+    TaxInvoiceComponent,
     TableComponent,
     ControlComponent,
   ],
