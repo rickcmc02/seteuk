@@ -96,7 +96,7 @@
       <span class="material-symbols-outlined np-btn"> chevron_right </span>
     </button>
 
-    <select
+    <!-- <select
       class="row-num-select"
       [value]="rowsPerPage"
       (ngModelChange)="onChangeRowsPerPage($event.target)"
@@ -104,6 +104,21 @@
       <option (value)="(10)">10</option>
       <option (value)="(20)">20</option>
       <option (value)="(50)">50</option>
-    </select>
+    </select> -->
+
+    <mat-form-field appearance="fill" class="row-num-field">
+      <mat-select
+        [(value)]="rowsPerPage"
+        (selectionChange)="onChangeRowsPerPage($event.value)"
+        hideSingleSelectionIndicator
+      >
+        <mat-option
+          *ngFor="let rowNum of rowNumOptions"
+          [value]="rowNum"
+          class="row-num-option"
+          >{{ rowNum }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
   </div>
 </section>

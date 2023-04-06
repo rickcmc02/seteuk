@@ -224,6 +224,8 @@ export class TableComponent {
   numOfPages: number = Math.ceil(ELEMENT_DATA.length / this.rowsPerPage);
   NOP_LIST: any[] = new Array(this.numOfPages);
 
+  rowNumOptions: number[] = [10, 20, 50];
+
   displayedColumns: string[] = [
     'date',
     'transaction',
@@ -255,7 +257,6 @@ export class TableComponent {
     this.onChangePage(this.currentPage + 1);
   }
   onChangeRowsPerPage(rows: any) {
-    console.log(rows);
     this.rowsPerPage = rows;
     this.onChangePage(this.currentPage);
   }
