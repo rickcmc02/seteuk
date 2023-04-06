@@ -257,7 +257,10 @@ export class TableComponent {
     this.onChangePage(this.currentPage + 1);
   }
   onChangeRowsPerPage(rows: any) {
+    this.currentPage = 0;
     this.rowsPerPage = rows;
+    this.numOfPages = Math.ceil(ELEMENT_DATA.length / this.rowsPerPage);
+    this.NOP_LIST = new Array(this.numOfPages);
     this.onChangePage(this.currentPage);
   }
 }
